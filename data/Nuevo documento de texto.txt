@@ -1,0 +1,110 @@
+
+
+Octubre 8 de 2026
+
+1.  Encontrar la molecula asociada a cada pico y comparar en la literatura que tienen en comun el etnol y el isopropanol.  Hacerlo con
+el numero  de onda absoluto y con el corrimiento raman
+
+2. Explorar los espectros obtenidos con alguna librería de pyhton. Mirar cuals de esas librerías ayuda a identificar mejor el espectro
+
+3. Próxima sesión:  Difración de rayos x       (Jader)
+                    Fluorescencia de rayos x   (Eduardo)
+
+
+# 1. Introducción y estructura de los archivos CSV1. Introducción y estructura de los archivos CSV (aquí incluí lo de la limpieza)
+# Espectro Raman de etanol - Shif Raman
+## 1. Exploración del espectro de etanol original
+## 2. Creación de un espectro Raman limpio
+## 3. Extracción de la información de los picos
+
+# 2. Automatización del proceso
+A) Espectro Raman de etanol - Shif Raman
+
+
+
+
+# Ethanol Raman spectrum - absolute wavenumber
+
+ ## 1. Exploration of the Original Ethanol Spectrum
+
+The original ethanol Raman spectrum is first explored to understand the
+structure of the CSV file before applying any processing.
+
+The dataset contains the Raman spectrum and an additional section called
+`Peaks`. The spectrum is represented by the index of the DataFrame and
+the intensity values stored in the `Unnamed: 0` column.
+
+During the initial exploration, the following steps are performed:
+
+* Load the original ethanol Raman spectrum.
+* Inspect the structure and data types of the DataFrame.
+* Identify non-numeric values in the index.
+* Locate the `Peaks` section.
+* Inspect the data before and after the `Peaks` label.
+* Plot the original data to understand how the spectrum and peak
+  information are stored.
+
+This exploratory step is important because the peak information is stored
+after the original Raman spectrum in the same CSV file. The original data
+are kept unchanged throughout the analysis.
+
+
+## 2. Create a Clean Raman Spectrum
+
+The original ethanol CSV file contains the Raman spectrum followed by a
+separate section called `Peaks`.
+
+The `Peaks` section contains information about detected peaks and is not
+part of the original spectrum.
+
+A new DataFrame called `etanol_clean` is created using only the spectral
+data. The original DataFrame and CSV file are not modified.
+
+The new DataFrame contains two columns:
+
+- `Wavenumber_cm-1`: absolute wavenumber in cm⁻¹.
+- `Intensity`: Raman intensity.
+
+
+## 3. Extract the Peak Information
+
+The original ethanol CSV file contains a `Peaks` section after the
+Raman spectrum.
+
+This section contains the position and intensity of the detected peaks.
+The peak information is extracted into a new DataFrame called
+`etanol_peaks`.
+
+The original DataFrame is not modified.
+
+
+
+
+
+
+Alcohols: ethanol, isopropanol, and methanol.—We initially observed that the choice
+of the incident beam wavelengths had no significant impact on the Raman spectra of these
+alcohol fluids. Therefore, only data taken at 532 nm are shown in Figure 2, which compares
+the Raman spectra for three pure alcohols: ethanol, methanol, and isopropanol (IPA).
+The ethanol spectrum has a strong band at a Raman shift of 880 cm−1, because of
+carbon-carbon (C–C) bond symmetric stretching in the molecule, and two small bands at
+1,040 and 1,090 cm−1, corresponding, respectively, to carbon–oxygen (C–O) bond stretching
+andCH3 rocking or to C–C–O bonds asymmetric vibrations (Boyaci et al. 2012, Pappas
+et al. 2016). Very strong peaks are observed at 2,880, 2,930, and 2,970 cm−1, corresponding
+to the C–H bond stretching modes, whereas the broad band around 3,350 cm−1 is assigned
+to the OH bond stretching mode (Numata et al. 2011). Some additional peaks are present
+in the spectral fingerprint at 430 (C–O deformation), 1,270 (CH2 twisting), 1,450 (CH2 scissoring),
+1,480 (CH3 asymmetric deformation), and 2,710 cm−1 (Picard et al. 2007, Pappas
+et al. 2016).
+Isopropyl alcohol and ethanol have relatively similar spectral fingerprints, which was expected,
+because these twomolecules are chemically close (Jin et al. 2018). Yet some features
+make it possible to differentiate thesemolecules. First, there is a significant shift of the C–C
+stretching peak from 880 cm−1 for ethanol to 820 cm−1 for IPA. Second, the C–H stretching
+peak of ethanol (2,930 cm−1) splits into two peaks for IPA (2,920 and 2,940 cm−1).
+The Raman spectrum of methanol contains fewer peaks, which is logical, because it is
+the simplest of the alcohols. For this fluid, single C–O stretching and CH3 rocking peaks
+are observed, respectively, at 1,040 and 1,110 cm−1. Moreover, the CH3 asymmetric deformation
+peak and the three C–H symmetric stretching peaks observed, respectively, at 1,455,
+2,885, 2,930, and 2,980 cm−1 for ethanol, are shifted to two peaks, only situated at 1,480
+and 2,945 cm−1 (Vaskova 2014).
+
